@@ -5,29 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine? 💖</title>
     <style>
-        /* Background and overall styling */
-        body {
-            background-image: url('https://wallpapercave.com/wp/wp6823144.jpg'); /* Replace with a cute anime background */
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            color: white;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Make video background full screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
         }
 
+        /* Video background */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Main content */
         .container {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             padding: 30px;
-            display: inline-block;
-            margin-top: 10%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            margin: auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .question {
             font-size: 24px;
-            font-weight: bold;
-            color: #ff66b2;
+            font-weight: 600;
+            color: #e63946;
         }
 
         .buttons {
@@ -35,25 +57,26 @@
         }
 
         button {
-            background-color: #ff66b2;
+            background-color: #e63946;
             color: white;
             border: none;
             padding: 12px 24px;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 8px;
             cursor: pointer;
             margin: 10px;
-            transition: 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
 
         button:hover {
-            background-color: #ff3385;
+            background-color: #d62839;
+            transform: scale(1.1);
         }
 
-        /* Hidden images */
         .response {
             display: none;
             margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .response img {
@@ -64,8 +87,15 @@
 </head>
 <body>
 
+    <!-- Video Background -->
+    <video class="video-bg" autoplay loop muted>
+        <source src="https://www.videvo.net/videvo_files/converted/2021_01/preview/210125_04_ValentinesDay_1080p_002.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
     <div class="container">
-        <h1 class="question">Will you be my Valentine? ASOOOO💖</h1>
+        <h1 class="question">Will you be my Valentine? 💖</h1>
         <div class="buttons">
             <button onclick="showResponse('flower')">Yes</button>
             <button onclick="showResponse('snake')">Maybe Later</button>
