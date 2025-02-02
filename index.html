@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💖</title>
+    <style>
+        /* Background and overall styling */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp6823144.jpg'); /* Replace with a cute anime background */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            display: inline-block;
+            margin-top: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff66b2;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff3385;
+        }
+
+        /* Hidden images */
+        .response {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .response img {
+            width: 200px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="question">Will you be my Valentine? ASOOOO💖</h1>
+        <div class="buttons">
+            <button onclick="showResponse('flower')">Yes</button>
+            <button onclick="showResponse('snake')">Maybe Later</button>
+        </div>
+        <div id="flower" class="response">
+            <img src="https://i.pinimg.com/originals/63/5b/35/635b35d31f64ad3bfa045220801996fc.jpg" alt="Cute Flower">
+            <p>Yay! You made my day! 🌸💖</p>
+        </div>
+        <div id="snake" class="response">
+            <img src="https://i.pinimg.com/originals/3e/1a/45/3e1a45282c3a1f3cc32c7e59599eaf83.jpg" alt="Cute Snake">
+            <p>Oh no! Maybe next time? 🐍😢</p>
+        </div>
+    </div>
+
+    <script>
+        function showResponse(choice) {
+            document.getElementById('flower').style.display = 'none';
+            document.getElementById('snake').style.display = 'none';
+            document.getElementById(choice).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
